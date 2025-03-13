@@ -73,5 +73,11 @@
     .buttons *{
         margin-top: 5%;
     }
+
+    .subContainer{
+        display: flex;
+        justify-content: center;
+    }
+
   }
   
