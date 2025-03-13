@@ -1,0 +1,77 @@
+.container{
+    height: 100vh;
+}
+.btncontainer{
+    height: 20%;
+    width: 20%;
+    margin: 2% 40% 0 40%;
+    display: flex;
+    justify-content: center;
+}
+.journalContainerRed{
+    width: 100%;
+    height: fit-content;
+    font-size: 15pt;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(242, 92, 92);
+    color: aliceblue;
+}
+
+.journalContainerGreen{
+    width: 100%;
+    height: fit-content;
+    font-size: 15pt;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(70, 197, 155);
+    color:azure;
+}
+
+.coinName,.pnl{
+    width: 100%;
+    text-align: center;
+}
+
+.addjournal{
+   width: 100%;
+   height: 100%;
+   background-color: rgb(255, 236, 127);
+   font-size: 20pt;
+   font-weight: 700;
+}
+.subContainer{
+    padding-top: 2%;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 20% 20%; 
+    justify-content: center;
+    row-gap: 8%;
+    column-gap: 2%;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+@media (max-width: 600px) {
+    .buttons *{
+        margin-top: 5%;
+    }
+  }
+  

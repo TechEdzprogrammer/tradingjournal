@@ -1,0 +1,47 @@
+.landingPage {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 10%;
+    background: url('../img/banner.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: left;
+  }
+  
+  .content {
+    max-width: 500px;
+    background-color:rgb(69, 63, 63);
+    padding:2%;
+  }
+  
+  .content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+  }
+  
+  @media (max-width: 768px) {
+    .landingPage {
+      align-items: center;
+      text-align: center;
+      padding: 0 5%;
+    }
+  
+    .content h1 {
+      font-size: 2rem;
+    }
+  
+    .content p {
+      font-size: 1rem;
+    }
+  }
+  

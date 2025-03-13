@@ -1,0 +1,20 @@
+.footer {
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .appName {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .subText {
+    font-size: 1rem;
+    color: #b0b0b0;
+  }
+  
