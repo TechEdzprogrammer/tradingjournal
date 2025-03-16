@@ -1,7 +1,18 @@
   
 .brand{
   font-weight: 700;
+  color: beige;
 }
+
+.items{
+  color: aliceblue;
+}
+
+.items:hover{
+  color: aqua;
+}
+
+
 
   
   

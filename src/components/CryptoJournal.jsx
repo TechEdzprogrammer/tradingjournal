@@ -3,16 +3,33 @@ import NavBar from '../subcomponents/NavBar';
 import styles from "../stylesheets/cryptojournal.module.css";
 import JournalModal from "./JournalModal";
 import { JournalContext } from "../context/journalContext";
-import { Link } from "react-router-dom";
-import Footer from "../subcomponents/Footer";
+import JournalEntryModal from "./JournalEntryModal";
+
 
 function CryptoJournal() {
     
     const [modal, setModal] = useState(false);
-    const {journal , setJournal} = useContext(JournalContext);
+    const {journal , setJournal, winTrades, setWinTrades, loseTrades, setLoseTrades} = useContext(JournalContext);
+    const [journalEntryModal, setJournalEntryModal] = useState(false);
+    const [journalID, setJournalID] = useState();
 
     function renderForm(){
         setModal(true);
+    }
+
+    function renderJournalEntry(index){
+        setJournalEntryModal(true);
+        setJournalID(index);
+    }
+
+    function deleteEntry(ind, result){
+        setJournal(journal.filter((e, index) => index !== ind));
+        if(result === "win"){
+            setWinTrades(winTrades - 1);
+        }
+        else{
+            setLoseTrades(loseTrades - 1);
+        }
     }
 
     return (
@@ -20,7 +37,9 @@ function CryptoJournal() {
         <NavBar/>
         <div className={styles.container}>
             <div className={styles.btncontainer}>
-                <button onClick={renderForm} className={styles.addjournal}>Add a journal</button>
+                <button onClick={renderForm} className={`btn btn-warning ${styles.addjournal}`}>Add a journal</button>
+                <div className={styles.win}>Winning Trades: {winTrades}</div>
+                <div className={styles.lose}>Losing Trades: {loseTrades}</div>
             </div>
             <section className={styles.subContainer}>
                 {journal.map((e,index) => {
@@ -33,10 +52,8 @@ function CryptoJournal() {
                                 <p>PNL: {e.pnl}usdt</p>
                             </div>
                             <div className={styles.buttons}>
-                                <Link to={`/journalentry/${index}`}><button className="btn btn-dark">View Journal</button></Link>
-                                <button className="btn btn-warning" onClick={() =>{
-                                    setJournal(journal.filter((e, ind) => ind !== index));
-                                }}>Delete</button>
+                                <button onClick={() => renderJournalEntry(index)} className="btn btn-dark">View Journal</button>
+                                <button className="btn btn-warning" onClick={() => deleteEntry(index, e.result)}>Delete</button>
                             </div>
                         </div>
                     );
@@ -45,7 +62,10 @@ function CryptoJournal() {
             <JournalModal isOpen={modal} onClose={() => setModal(false)}>
                 <h2>Journal Your Trade</h2>
             </JournalModal>
-            <Footer/>
+
+            <JournalEntryModal isOpen={journalEntryModal} onClose={() => setJournalEntryModal(false)} id={journalID}>
+                <h2>Journal Entry</h2>
+            </JournalEntryModal>
         </div>
     </>
   )

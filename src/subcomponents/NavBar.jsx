@@ -11,7 +11,7 @@ function NavBar(){
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-            <Link to={"/cryptoJournal"}className="navbar-brand"><p>Entries</p></Link>
+              <Link to={"/cryptoJournal"} className={`navbar-brand ${styles.items}`}><p>Entries</p></Link>
             </div>
           </div>
         </div>

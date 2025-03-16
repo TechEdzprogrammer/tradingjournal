@@ -1,10 +1,15 @@
 import styles from '../stylesheets/journalmodal.module.css'
 import { useState, useContext } from 'react';
 import { JournalContext } from '../context/journalContext';
+
 function JournalModal({ isOpen, onClose, children }) {
     
     if (!isOpen) return null;
-    const {journal, setJournal} =useContext(JournalContext);
+    const {journal, 
+        setJournal, 
+        setLoseTrades, 
+        setWinTrades, 
+        winTrades,loseTrades} = useContext(JournalContext);
 
     const [formData, setFormData] = useState({
         coinName: "",
@@ -23,6 +28,12 @@ function JournalModal({ isOpen, onClose, children }) {
       function handleSubmit(e){
         e.preventDefault();
         setJournal([...journal, formData]);
+        if(formData.result === "lose"){
+            setLoseTrades(loseTrades+1);
+        }
+        else{
+            setWinTrades(winTrades+1);
+        }
         onClose(); 
       };
 

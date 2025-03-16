@@ -3,12 +3,13 @@
 }
 .btncontainer{
     height: 20%;
-    width: 20%;
-    margin: 2% 40% 0 40%;
+    width: 100%;
+    margin-top: 2%;
     display: flex;
     justify-content: center;
+    gap:2%;
 }
-.journalContainerRed{
+.journalContainerRed, .journalContainerGreen{
     width: 100%;
     height: fit-content;
     font-size: 15pt;
@@ -18,22 +19,15 @@
     align-items: center;
     padding: 1.5%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: rgb(242, 92, 92);
     color: aliceblue;
 }
 
+.journalContainerRed{
+    background-color: rgb(242, 92, 92);
+}
+
 .journalContainerGreen{
-    width: 100%;
-    height: fit-content;
-    font-size: 15pt;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: rgb(70, 197, 155);
-    color:azure;
 }
 
 .coinName,.pnl{
@@ -42,16 +36,45 @@
 }
 
 .addjournal{
-   width: 100%;
-   height: 100%;
+   height: max-content;
+   padding: 2%;
    background-color: rgb(255, 236, 127);
-   font-size: 20pt;
+   font-size: 10pt;
    font-weight: 700;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+.win{
+    height: max-content;
+    padding: 2%;
+    background-color: rgb(147, 240, 107);
+    font-size: 10pt;
+    font-weight: 700;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    
+}
+
+.winRate{
+    height: max-content;
+    padding: 2%;
+    background-color: rgb(107, 233, 240);
+    font-size: 10pt;
+    font-weight: 700;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.lose{
+    height: max-content;
+    padding: 2%;
+    background-color: rgb(250, 94, 94);
+    font-size: 10pt;
+    font-weight: 700;
+    color: aliceblue;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
 .subContainer{
     padding-top: 2%;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: grid;
     grid-template-columns: 30% 30% 30%;
     grid-template-rows: 20% 20%; 
@@ -81,15 +104,8 @@
         row-gap: 8%;
         column-gap: 2%;
     }
-    .addjournal{
-        width: 100%;
-        height: 60%;
-        background-color: rgb(255, 236, 127);
-        font-size: 8pt;
-        font-weight: 700;
-     }
      .journalContainerRed, .journalContainerGreen{
         font-size: 18pt;
      }
-}
+  }
   
