@@ -11,13 +11,13 @@ function JournalEntryModal({ isOpen, onClose, children, id }) {
   const {journal} = useContext(JournalContext);
   return (
     <>
-        <div className={styleModal.overlay}>
+        <div className={styleModal.overlay} onClick={onClose}>
             <div className={styleModal.modal}>
             <button onClick={onClose} className='btn btn-dark'>Close X</button>
                 <div className={styles.entryContainer}>
                     <div className={styles.journalDetails}>
                     <h3 className={styles.heading}>Coin Pair: {journal[id].coinName}</h3>
-                    <p><strong>Trading Strategy</strong>: {journal[id].strategyUsed}</p>
+                    <p><strong>Trading Strategy</strong>: {journal[id].otherStrategy ? (journal[id].otherStrategy):(journal[id].strategyUsed)}</p>
                     <p><strong>Objective</strong>: {journal[id].objective}</p>
                     <p><strong>Margin</strong>: {journal[id].margin}usdt</p>
                     <p><strong>PNL</strong>: {journal[id].pnl}usdt</p>
