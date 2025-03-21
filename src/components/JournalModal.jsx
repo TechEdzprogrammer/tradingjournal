@@ -1,5 +1,5 @@
 import styles from '../stylesheets/journalmodal.module.css'
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { JournalContext } from '../context/journalContext';
 
 function JournalModal({ isOpen, onClose, children }) {
@@ -22,7 +22,6 @@ function JournalModal({ isOpen, onClose, children }) {
 
     function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });
-
         setErrors({ ...errors, [e.target.name]: "" });
     }
 
@@ -45,7 +44,6 @@ function JournalModal({ isOpen, onClose, children }) {
     function handleSubmit(e) {
         e.preventDefault();
         if (!validateForm()) return; 
-
         setJournal([...journal, formData]);
         formData.result === "lose" ? setLoseTrades(loseTrades + 1) : setWinTrades(winTrades + 1);
         onClose();

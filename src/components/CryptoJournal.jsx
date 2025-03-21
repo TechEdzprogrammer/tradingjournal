@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import NavBar from '../subcomponents/NavBar';
 import styles from "../stylesheets/cryptojournal.module.css";
 import JournalModal from "./JournalModal";
@@ -12,6 +12,12 @@ function CryptoJournal() {
     const {journal , setJournal, winTrades, setWinTrades, loseTrades, setLoseTrades} = useContext(JournalContext);
     const [journalEntryModal, setJournalEntryModal] = useState(false);
     const [journalID, setJournalID] = useState();
+
+
+    useEffect(() => {
+        const journalEntries = localStorage.getItem('journals');
+        setJournal(JSON.parse(journalEntries));
+    },[]);
 
     function renderForm(){
         setModal(true);
@@ -31,7 +37,7 @@ function CryptoJournal() {
             setLoseTrades(loseTrades - 1);
         }
     }
-
+    
     return (
     <>
         <NavBar/>
