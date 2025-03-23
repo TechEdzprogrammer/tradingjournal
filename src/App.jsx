@@ -2,6 +2,7 @@ import './App.css';
 import { Route, Routes} from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import CryptoJournal from './components/CryptoJournal';
+import TradingStatus from './components/TradingStatus';
 import { JournalContextProvider } from './context/journalContext';
 
 function App() {
