@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage/>} index />;
           <Route path="/cryptoJournal" element={<CryptoJournal/>}/>
+          <Route path="/tradingStatus" element={<TradingStatus/>}/>
         </Routes>
       </JournalContextProvider>
     </>
