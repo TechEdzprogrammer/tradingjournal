@@ -13,12 +13,6 @@ function CryptoJournal() {
     const [journalEntryModal, setJournalEntryModal] = useState(false);
     const [journalID, setJournalID] = useState();
 
-
-    useEffect(() => {
-        const journalEntries = localStorage.getItem('journals');
-        setJournal(JSON.parse(journalEntries));
-    },[]);
-
     function renderForm(){
         setModal(true);
     }

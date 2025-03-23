@@ -8,7 +8,7 @@
 }
 
 .journalDetails{
-    width: 100%;
+    width: fit-content;
     height: max-content;
     background-color: bisque;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

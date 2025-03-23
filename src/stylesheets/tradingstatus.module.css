@@ -1,0 +1,22 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.PNLChart, .winLoseChart{
+    width: 55%;
+    height: 60%;
+    margin-top: 2%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.winLoseChart{
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+
