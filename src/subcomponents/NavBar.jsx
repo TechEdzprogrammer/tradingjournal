@@ -12,7 +12,7 @@ function NavBar(){
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <Link to={"/cryptoJournal"} className={`navbar-brand ${styles.items}`}><p>Entries</p></Link>
-              <Link to={"/tradingStatus"} className={`navbar-brand ${styles.items}`}><p>Stats</p></Link>
+              {/* <Link to={"/tradingStatus"} className={`navbar-brand ${styles.items}`}><p>Stats</p></Link> */}
             </div>
           </div>
         </div>
