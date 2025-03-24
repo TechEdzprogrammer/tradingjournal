@@ -1,5 +1,5 @@
 .container{
-    height: 100vh;
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,12 +8,13 @@
 
 .PNLChart, .winLoseChart{
     width: 55%;
-    height: 60%;
-    margin-top: 2%;
+    margin-top: 3%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2%;
 }
 
 .winLoseChart{
+    width: 50%;
     margin-bottom: 5%;
     display: flex;
     justify-content: center;
